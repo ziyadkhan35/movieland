@@ -2,12 +2,21 @@ import React from 'react'
 import YouTube from 'react-youtube'
 
 const MovieItem = ({movie, video, review}) => {
+  
   // Key For Movie Trailer
   const trailerKey = video.videos.results.find((trailer) => trailer.name === 'Official Trailer')?.key
+  const opts = { 
+    height: '350',
+    width: '600',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 0,
+    }
+  }
   return (
     <>
       {/* Container for All Items */}
-      <div className="flex flex-col mx-10 xl:mx-32 ps-0 pb-10 mt-20 rounded-md text-gray-200" style={{backgroundColor:'#12323F'}}>
+      <div className="flex flex-col lg:mx-10 xl:mx-32 pb-10 mt-20 rounded-md text-gray-200" style={{backgroundColor:'#12323F'}}>
         {/* For header and imbd,language buttons */}
         <div className="flex justify-between items-center me-10">
           {/* Header */}
@@ -21,7 +30,7 @@ const MovieItem = ({movie, video, review}) => {
         {/* Movie Describe */}
         <div className="flex space-x-2 me-10 order-last md:order-none">
           {/* Image */}
-          <div className="hidden md:block md:basis-1/3 ps-10 me-2 ">
+          <div className="hidden md:block md:basis-1/3 ps-10 me-2">
             <img className='' src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} alt="" />
             <p className='bg-gray-600 mt-1 py-2 text-center rounded-md text-lg'>Watch Trailer</p>
           </div>
@@ -64,9 +73,9 @@ const MovieItem = ({movie, video, review}) => {
         </div>
         {/* Trailer */}
         <div className="flex flex-col justify-center mt-4 sm:mt-16 mx-10 p-4" style={{backgroundColor:'#2D5F6A'}}>
-          <h3 className='text-xl sm:text-2xl lg:text-3xl font-bold mx-56 rounded-sm mb-6 mt-2 py-1 text-gray-200 text-center font-montserrat'>Watch Trailer</h3>
+          <h3 className='text-2xl lg:text-3xl font-bold mx-56 rounded-sm mb-6 mt-2 py-1 text-gray-200 text-center font-montserrat'>Watch Trailer</h3>
           <div className="flex justify-center">
-            <YouTube videoId={trailerKey}/>
+            <YouTube videoId={trailerKey} opts={opts}/>
           </div>
         </div>
       </div>

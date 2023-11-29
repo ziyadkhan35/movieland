@@ -7,7 +7,7 @@ const search = ({ data }) => {
   const router = useRouter()
   return (
     <>
-      <div className="mx-10 xl:mx-32">
+      <div className="sm:mx-10 xl:px-32 mt-20">
         <div className="flex mt-16 opacity-90 rounded-md" style={{backgroundColor:'#12323F'}}>
           <LeftSideForFilms data={data.results} genre_name={`search/${router.query.slug}`} header={`${router.query.slug}`}/>
           <RightSideForFilms />

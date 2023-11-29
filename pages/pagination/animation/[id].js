@@ -5,7 +5,7 @@ import React from 'react'
 const animation = ({movies}) => {
     
   return (
-    <div className="px-10 xl:px-32 mt-20">
+    <div className="sm:mx-10 xl:px-32 mt-20">
         <div className="flex mt-16 opacity-90 rounded-md" style={{backgroundColor:'#12323F'}}>
             <LeftSideForFilms data={movies.results} genre_name={'animation'} header={'Animation Movies'}/>
             <RightSideForFilms />

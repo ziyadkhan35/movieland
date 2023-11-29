@@ -25,11 +25,11 @@ const Header = () => {
     <>
       <header className='bg-land-black fixed top-0 w-full z-10'>
         {/* Header Container */}
-        <div className="flex items-center justify-between py-6 space-x-8 px-10 xl:px-32">
+        <div className="flex items-center justify-between py-7 md:py-6 space-x-8 px-10 xl:px-32">
           {/* Logo */}
           <div className="flex items-center">
             <i class="fa-solid fa-film text-xl text-land-cyan me-3"></i>
-            <a href="/" className='font-barlow uppercase text-land-cyan font-bold text-xl '>Movieland</a>
+            <a href="/" className='font-barlow uppercase text-land-cyan font-bold text-2xl md:text-xl'>Movieland</a>
           </div>
           {/* Navigation */}
           <nav className='hidden lg:flex flex-1 items-center justify-end space-x-8'>
@@ -47,7 +47,7 @@ const Header = () => {
               </div>
           </nav>
           {/* Menu Bar Button */}
-          <button className='block lg:hidden text-white' onClick={() => toggleBar(responsiveNavbar)}><i class="fa-solid fa-bars"></i></button>
+          <button className='block lg:hidden text-white text-2xl md:text-xl' onClick={() => toggleBar(responsiveNavbar)}><i class="fa-solid fa-bars"></i></button>
         </div>
         {/* Responsive Menu */}
         <nav ref={responsiveNavbar} className='hidden mb-2'>
@@ -74,7 +74,7 @@ const Header = () => {
 
       </header>
       {/* Search Area for Responsive */}
-      <div className="flex justify-center mt-20 lg:hidden">
+      <div className="flex justify-center mt-24 md:mt-20 lg:hidden">
         <div className="w-11/12 flex justify-center">
           <input onChange={(e)=>{setSearch(e.target.value)}} value={search} onKeyPress={searchMovie} placeholder='Type something' className='bg-gray-600 outline-none text-land-gray px-2 py-1 rounded-s w-11/12' type="text" />
           <button onClick={()=>router.push(`/search/${search}`)} className='text-land-gray rounded-e bg-gray-600'><i class="fa fa-search px-2" aria-hidden="true"></i></button>

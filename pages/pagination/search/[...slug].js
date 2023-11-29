@@ -8,7 +8,7 @@ const search = ({ data }) => {
   console.log(router);
   return (
     <>
-      <div className="px-32 mt-20">
+      <div className="sm:mx-10 px-32 mt-20">
         <div className="flex mt-16 opacity-90 rounded-md" style={{backgroundColor:'#12323F'}}>
           <LeftSideForFilms data={data.results} genre_name={`search/${router.query.slug[0]}`} header={`${router.query.slug[0]}`}/>
           <RightSideForFilms />

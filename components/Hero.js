@@ -9,7 +9,7 @@ const Hero = () => {
             {/* Base Movie Image */}
             <img className='object-cover w-full h-full bg-gradient-to-t from-black opacity-90' src="https://wallpapers.com/images/hd/the-witcher-hanged-man-s-tree-kd3hrv4iup4xrtei.webp" alt="movie" />
             {/* Movie Content */}
-            <div className="absolute flex flex-col items-center bottom-28 md:bottom-20 lg:bottom-12 text-land-gray">
+            <div className="absolute flex flex-col items-center bottom-24 md:bottom-20 lg:bottom-12 text-land-gray">
             {/* Addition Informations */}
             <div className="flex font-mono mb-6">
                 {/* rating */}

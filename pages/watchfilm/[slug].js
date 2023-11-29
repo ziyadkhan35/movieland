@@ -8,7 +8,7 @@ const filmType = ({ results }) => {
     console.log(router);
   return (
     <>
-        <div className="px-32">
+        <div className="sm:mx-10 xl:px-32 mt-20">
           <div className="flex mt-16 opacity-90 rounded-md" style={{backgroundColor:'#12323F'}}>
             <LeftSideForFilms data={results} forLink='watchfilm'/>
             <RightSideForFilms />
