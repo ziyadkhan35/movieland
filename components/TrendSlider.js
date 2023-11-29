@@ -30,7 +30,7 @@ const TrendSlider = (movies) => {
             <div ref={div} className="carousel container flex flex-nowrap space-x-4 overflow-hidden scroll-smooth">   
               {
                 movies.data.map((movie) => (
-                  <img ref={img} className="h-64 w-1/3 relative cursor-pointer hover:opacity-80" key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} draggable="false" alt="" onClick={()=>router.push(`/movie/${movie.id}`)}/> 
+                  <img ref={img} className="h-64 w-2/3 relative cursor-pointer hover:opacity-80" key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} draggable="false" alt="" onClick={()=>router.push(`/movie/${movie.id}`)}/> 
                 ))
               }
             </div>
