@@ -4,7 +4,7 @@ import React from 'react'
 
 const Popular = ({movies}) => {
   return (
-    <div className="sm:mx-10 px-32 mt-20">
+    <div className="sm:mx-10 xl:px-32 mt-20">
       <div className="flex mt-16 opacity-90 rounded-md" style={{backgroundColor:'#12323F'}}>
         <LeftSideForFilms data={movies.results.slice(1, 16)} genre_name={'popular'} header={'Popular Movies'}/>
         <RightSideForFilms />
