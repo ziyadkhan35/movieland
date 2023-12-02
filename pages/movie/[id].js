@@ -16,7 +16,7 @@ const MovieItem = ({movie, video, review}) => {
   return (
     <>
       {/* Container for All Items */}
-      <div className="flex flex-col lg:mx-10 xl:mx-32 pb-10 mt-20 rounded-md text-gray-200" style={{backgroundColor:'#12323F'}}>
+      <div className="flex flex-col lg:mx-10 xl:mx-32 2xl:mx-64 pb-10 mt-20 rounded-md text-gray-200" style={{backgroundColor:'#12323F'}}>
         {/* For header and imbd,language buttons */}
         <div className="flex justify-between items-center me-10">
           {/* Header */}

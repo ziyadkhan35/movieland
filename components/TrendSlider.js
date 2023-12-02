@@ -18,6 +18,24 @@ const TrendSlider = (movies) => {
   const leftMovie = () => {
     carousel.scrollLeft += -imgWidth
   }
+  
+  // Dragging
+  let isDragStart = false, prevPageX, prevScrollLeft
+
+  const dragging = (e) => {
+    if(!isDragStart) return;
+
+    let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX
+    carousel.scrollLeft = prevScrollLeft - positionDiff
+  }
+  const dragStart = (e) => {
+    isDragStart = true
+    prevPageX = e.pageX || e.touches[0].pageX 
+    prevScrollLeft = carousel.scrollLeft
+  }
+  const dragStop = () => {
+    isDragStart = false
+  }
 
   return (
     <>
@@ -27,10 +45,10 @@ const TrendSlider = (movies) => {
         <section className="flex justify-center">
           <div className="wrapper max-w-7xl relative px-10">
             
-            <div ref={div} className="carousel container flex flex-nowrap space-x-4 overflow-hidden scroll-smooth">   
+            <div ref={div} className="carousel container flex flex-nowrap space-x-4 overflow-hidden scroll-smooth" onMouseDown={(e)=>dragStart(e)} onMouseUp={()=>dragStop()} onMouseLeave={()=>dragStop()} onMouseMove={(e)=>dragging(e)} onTouchStart={(e)=>dragStart(e)} onTouchEnd={()=>dragStop()} onTouchMove={(e)=>dragging(e)}>   
               {
                 movies.data.map((movie) => (
-                  <img ref={img} className="h-64 w-2/3 relative cursor-pointer hover:opacity-80" key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} draggable="false" alt="" onClick={()=>router.push(`/movie/${movie.id}`)}/> 
+                  <img ref={img} className="h-64 w-2/3 relative cursor-pointer hover:opacity-80" key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} draggable="false" alt="" onClick={()=>router.push(`/movie/${movie.id}`)} /> 
                 ))
               }
             </div>
